@@ -10,11 +10,33 @@ h1 {
 .pokedex {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 3rem;
-    row-gap: 3rem;
-    margin-top: 50px;
-    margin-left: 150px;
-    margin-right: 150px;
+    gap: 3rem;
+    margin: 50px auto;
+    max-width: 80%;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .pokedex {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .pokedex {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+    }
+    .card img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Modification de la police sur mobile */
+    body {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+    }
 }
 
 .card {
@@ -24,8 +46,6 @@ h1 {
     align-items: center;
     padding: 0.5rem;
     border-radius: 8px;
-    -webkit-box-shadow: -8px 9px 18px -11px rgba(0,0,0,0.61);
-    -moz-box-shadow: -8px 9px 18px -11px rgba(0,0,0,0.61);
     box-shadow: -8px 9px 18px -11px rgba(0,0,0,0.61);
     cursor: pointer;
     background: #fff;
@@ -38,30 +58,123 @@ h1 {
 .card img {
     width: 200px;
     height: 200px;
+    max-width: 100%;
+    height: auto;
 }
 
+/* Navigation */
 nav {
-   display: flex;
-   justify-content: space-evenly;
-   align-items: center;
-   background-color: #c61111;
-   border-radius: 35px ;
-   height: 120px;   
-   background-size: 35px;
-
-   
-  }
-  nav img {
-    position: left;
-    left: 70px;
-    scale: 1.2;
-    height: 90px;
- }
-body{
-    position: relative;
-
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #c61111;
+    border-radius: 35px;
+    height: 120px;
 }
-.BG{
+
+nav img {
+    position: relative;
+    left: 70px;
+    transform: scale(1.2);
+    height: 90px;
+}
+
+/* Background */
+body {
+    position: relative;
+}* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.pokedex {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin: 50px auto;
+    max-width: 80%;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .pokedex {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .pokedex {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+    }
+
+    .card img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Changer la police sur mobile */
+    body {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    /* Cacher le slogan sur mobile */
+    .slogan {
+        display: none;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+    box-shadow: -8px 9px 18px -11px rgba(0,0,0,0.61);
+    cursor: pointer;
+    background: #fff;
+}
+
+.card:hover {
+    background-color: lightsalmon;
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #c61111;
+    border-radius: 35px;
+    height: 120px;
+}
+
+nav img {
+    position: relative;
+    left: 70px;
+    transform: scale(1.2);
+    height: 90px;
+}
+
+/* Background */
+body {
+    position: relative;
+}
+
+.BG {
     position: fixed;
     inset: 0;
     z-index: -5;
@@ -69,7 +182,14 @@ body{
     background-image: url("./img/Pokéball.jpeg");
     background-size: cover;
     filter: brightness(90%);
-    
 }
 
- 
+.BG {
+    position: fixed;
+    inset: 0;
+    z-index: -5;
+    width: 100%;
+    background-image: url("./img/Pokéball.jpeg");
+    background-size: cover;
+    filter: brightness(90%);
+}
